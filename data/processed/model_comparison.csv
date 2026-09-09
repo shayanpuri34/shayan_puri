@@ -1,0 +1,6 @@
+Model,Type,Directional_Accuracy,AUC,Precision,Recall,F1,MAE,RMSE,R2
+LogisticRegression,Classification,0.5057,0.4694,0.4057,0.3553,0.3687,,,
+RandomForest_Classifier,Classification,0.5114,0.5057,0.4385,0.3995,0.402,,,
+GradientBoosting_Classifier,Classification,0.5114,0.4808,0.4252,0.4058,0.4068,,,
+Ridge_Regressor,Regression,0.5057,,,,,0.0281,0.0365,-0.2928
+GradientBoosting_Regressor,Regression,0.5086,,,,,0.0292,0.0371,-0.3371

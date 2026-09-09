@@ -1,0 +1,8 @@
+Specification,Holding_Period,Cost_bps,CAGR,Sharpe,Max_Drawdown,Win_Rate,Total_Trades
+EPS Surprise / 1D Holding,1D,10.0,-0.0,-8.03,-0.0078,0.4432,176
+EPS Surprise / 5D Holding,5D,10.0,0.0012,-3.862,-0.0189,0.5057,176
+EPS Surprise / 10D Holding,10D,10.0,0.0013,-2.853,-0.0199,0.5511,176
+EPS Surprise / 20D Holding,20D,10.0,0.0029,-1.879,-0.0228,0.5682,176
+Revenue Surprise / 5D,5D,10.0,0.0,0.0,0.0,0.0,0
+Combined Multi-Factor / 5D,5D,10.0,-0.0016,-4.025,-0.0181,0.4699,183
+SUE Signal / 5D,5D,10.0,0.0012,-4.079,-0.0179,0.5251,179

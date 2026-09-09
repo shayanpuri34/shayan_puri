@@ -1,0 +1,24 @@
+# ============================================================
+# EVENT-DRIVEN EARNINGS ALPHA & BACKTESTING ENGINE
+# Core & Optional Dependencies
+# ============================================================
+
+# --- Core Dependencies (Required for base engine) ---
+numpy>=1.24.0
+pandas>=1.5.0
+scipy>=1.10.0
+scikit-learn>=1.2.0
+matplotlib>=3.7.0
+plotly>=5.15.0
+yfinance>=0.2.30
+requests>=2.31.0
+pyyaml>=6.0
+nbformat>=5.9.0
+pytest>=7.4.0
+
+# --- Optional Institutional Data Providers & Accelerators ---
+# (The engine automatically detects absence and gracefully falls back)
+# alpha_vantage>=2.3.1
+# polygon-api-client>=1.12.0
+# fredapi>=0.5.0
+# xgboost>=1.7.0

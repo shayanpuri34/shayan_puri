@@ -1,0 +1,6 @@
+Regime_Type,Regime,Days,Ann_Return,Ann_Volatility,Sharpe_Ratio,Daily_Win_Rate
+Trend,Bear,433,-0.0003,0.0065,-0.041,0.127
+Trend,Bull,1830,0.0015,0.0044,0.349,0.1191
+Vol,High_Vol,397,0.0055,0.007,0.776,0.1335
+Vol,Low_Vol,1048,-0.0,0.0033,-0.014,0.1155
+Vol,Normal_Vol,818,0.0007,0.0053,0.136,0.121

@@ -1,0 +1,6 @@
+{
+  "name": "Event-Driven Earnings Alpha & Backtesting Engine",
+  "description": "Quantitative event-driven earnings research, PEAD analysis, market model event study, walk-forward machine learning, and systematic backtesting engine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

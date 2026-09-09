@@ -1,0 +1,2 @@
+Total_Return,CAGR,Annualized_Volatility,Sharpe_Ratio,Sortino_Ratio,Calmar_Ratio,Maximum_Drawdown,Win_Rate,Profit_Factor,Average_Trade,Median_Trade,Best_Trade,Worst_Trade,VaR_95_Daily,VaR_99_Daily,CVaR_95_Daily,CVaR_99_Daily,Annualized_Turnover,Average_Gross_Exposure,Average_Net_Exposure,Total_Trades
+0.0107,0.0012,0.0049,-3.862,-2.902,0.062,-0.0189,0.5057,1.178,0.0029,0.0002,0.22,-0.1222,-0.0003,-0.001,-0.0007,-0.0014,0.78,0.008,-0.001,176

@@ -1,0 +1,122 @@
+# ============================================================
+# EVENT-DRIVEN EARNINGS ALPHA & BACKTESTING ENGINE CONFIGURATION
+# ============================================================
+
+project:
+  name: "Event-Driven Earnings Alpha & Backtesting Engine"
+  version: "1.0.0"
+  random_state: 42
+
+paths:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  reports_dir: "reports"
+  figures_dir: "reports/figures"
+  logs_dir: "logs"
+
+universe:
+  primary_name: "SP500"
+  benchmark: "SPY"
+  fallback:
+    - "AAPL"
+    - "MSFT"
+    - "AMZN"
+    - "GOOGL"
+    - "META"
+    - "NVDA"
+    - "JPM"
+    - "BAC"
+    - "XOM"
+    - "CVX"
+    - "WMT"
+    - "COST"
+  sector_map:
+    AAPL: "Information Technology"
+    MSFT: "Information Technology"
+    AMZN: "Consumer Discretionary"
+    GOOGL: "Communication Services"
+    META: "Communication Services"
+    NVDA: "Information Technology"
+    JPM: "Financials"
+    BAC: "Financials"
+    XOM: "Energy"
+    CVX: "Energy"
+    WMT: "Consumer Staples"
+    COST: "Consumer Staples"
+
+dates:
+  start_date: "2016-01-01"
+  end_date: "2024-12-31"
+
+data_priority:
+  - "alpha_vantage"
+  - "fmp"
+  - "yfinance"
+  - "sec"
+
+rate_limiting:
+  initial_delay_sec: 1.0
+  max_delay_sec: 16.0
+  max_retries: 4
+  timeout_sec: 15
+
+event_study:
+  estimation_window: [-252, -30]
+  event_windows:
+    - [-5, 5]
+    - [-2, 2]
+    - [-1, 1]
+    - [0, 1]
+    - [0, 5]
+    - [0, 20]
+  pead_windows:
+    - [1, 5]
+    - [1, 20]
+  surprise_buckets: 5
+
+features:
+  momentum_lookbacks: [5, 10, 21, 63]
+  volatility_lookbacks: [10, 21, 63]
+  volume_z_score_window: 21
+
+machine_learning:
+  target: "future_5d_abnormal_return"
+  secondary_target: "future_20d_abnormal_return"
+  cv_splits: 5
+  test_size_ratio: 0.20
+  random_state: 42
+  models:
+    - "LogisticRegression"
+    - "RandomForest"
+    - "GradientBoosting"
+
+signals:
+  upper_threshold_pctile: 0.80
+  lower_threshold_pctile: 0.20
+  composite_weights:
+    w1_eps_surprise: 0.35
+    w2_revenue_surprise: 0.25
+    w3_momentum: 0.15
+    w4_volume_shock: 0.15
+    w5_historical_reaction: 0.10
+
+portfolio:
+  holding_periods: [1, 5, 10, 20]
+  styles:
+    - "dollar_neutral"
+    - "long_only"
+  target_gross_exposure: 1.0
+  max_position_weight: 0.02
+  sizing_methods:
+    - "equal_weight"
+    - "volatility_scaling"
+    - "confidence_scaling"
+  overlapping_event_policy: "exit_existing_before_reentry"
+
+transaction_costs:
+  baseline_bps: 10
+  sensitivities_bps: [0, 5, 10, 25, 50]
+  breakdown:
+    commission_bps: 2.0
+    slippage_bps: 5.0
+    spread_bps: 3.0

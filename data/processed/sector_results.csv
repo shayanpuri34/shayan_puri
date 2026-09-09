@@ -1,0 +1,7 @@
+Sector,Total_Events,Avg_Surprise_Pct,"Avg_CAR[0,+1]","Avg_PEAD_CAR[+1,+5]",Strategy_Trades,Avg_Trade_Return,Trade_Win_Rate
+Communication Services,72,0.1133,0.001,-0.0063,33,0.015,0.5455
+Consumer Discretionary,36,1.5672,0.0012,-0.0092,31,0.0038,0.5806
+Consumer Staples,72,0.0523,-0.0003,-0.0035,19,0.0084,0.5789
+Energy,72,0.1638,-0.0019,-0.0045,39,0.0006,0.4872
+Financials,72,0.092,0.0014,0.0041,21,-0.0087,0.381
+Information Technology,108,0.0901,0.0144,-0.0045,33,-0.0032,0.4545

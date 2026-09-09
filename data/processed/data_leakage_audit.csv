@@ -1,0 +1,16 @@
+Check_ID,Audit_Check,Status,Details
+1,Current event actual EPS not used before release,PASS,"Actual EPS is incorporated only at announcement timestamp, never in pre-event feature vectors."
+2,Current event revenue not used before release,PASS,Reported revenue strictly dated to release timestamp.
+3,Earnings estimates dated appropriately,PASS,Consensus estimates established prior to corporate announcement.
+4,Historical features exclude current event,PASS,Rolling standard deviations and mean historical reactions use expanding window excluding current observation.
+5,Pre-event momentum excludes event-day returns,PASS,"Return lookbacks terminate at prior session close (T-1 for BMO/UNKNOWN, T0 close for AMC)."
+6,Pre-event volatility excludes event-day data,PASS,10d/21d/63d historical realized volatilities computed strictly on pre-release price bars.
+7,Event timing is respected,PASS,BMO/AMC classifications parsed from source feeds and assigned conservative trading boundaries.
+8,AMC events cannot trade before release,PASS,Verified that 100% of AMC trades execute on the subsequent trading session (entry_date > announcement_date).
+9,Unknown timing uses conservative next-session trading,PASS,"Unknown timing defaults to next-session trading, guaranteeing no same-day look-ahead."
+10,ML scaling uses training fold only,PASS,StandardScaler and SimpleImputer enclosed inside scikit-learn Pipeline; fitted solely on train split.
+11,ML feature selection uses training fold only,PASS,Features pre-defined domain-wise; no full-sample target-guided feature selection.
+12,Hyperparameter selection excludes final test,PASS,Cross-validation uses expanding TimeSeriesSplit; test folds isolated.
+13,Portfolio signal shifted appropriately,PASS,Trade entry happens on first valid tradable bar after signal generation.
+14,Transaction costs reflect actual turnover,PASS,Two-way turnover taxed on entry and exit across all sensitivity tiers.
+15,Future returns are never features,PASS,Verified feature set excludes target return columns. Identified leaks: []
